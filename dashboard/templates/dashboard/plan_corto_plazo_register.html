@@ -1,0 +1,71 @@
+{% extends 'dashboard/layouts/app.html' %}
+{% load static %}
+
+{% block titulo %}Corto plazo{% endblock titulo %}
+
+{% block extracss %}
+{% endblock extracss %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Corto plazo</h4>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-20">
+            <div class="card-body">
+
+                <form method="POST" class="form-horizontal">
+                    {% csrf_token %}
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">planta</label>
+                        <div class="col-sm-10">
+                            {{ form.planta }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">fecha</label>
+                        <div class="col-sm-10">
+                            {{ form.fecha }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">tipo</label>
+                        <div class="col-sm-10">
+                            {{ form.tipo }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">asignacion</label>
+                        <div class="col-sm-10">
+                            {{ form.asignacion }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row m-t-20">
+                        <div class="col-12 text-right">
+                            <a href="{% url 'dashboard:plan_corto_plazo_list' %}" class="btn btn-light waves-effect">Cancelar</a>
+                            <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Guardar</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+{% endblock content %}
+
+{% block extrajs %}
+{% endblock extrajs %}

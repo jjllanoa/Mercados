@@ -1,0 +1,71 @@
+{% extends 'dashboard/layouts/app.html' %}
+{% load static %}
+
+{% block titulo %}DemCarac{% endblock titulo %}
+
+{% block extracss %}
+{% endblock extracss %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">DemCarac</h4>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-20">
+            <div class="card-body">
+
+                <form method="POST" class="form-horizontal">
+                    {% csrf_token %}
+
+                    <div class="form-group row">
+                        <label for="demcarac-bloque-input" class="col-sm-2 col-form-label">Bloque</label>
+                        <div class="col-sm-10">
+                            {{ form.bloque }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="demcarac-duracion-input" class="col-sm-2 col-form-label">Duración</label>
+                        <div class="col-sm-10">
+                            {{ form.duracion }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="demcarac-restup-input" class="col-sm-2 col-form-label">Restup</label>
+                        <div class="col-sm-10">
+                            {{ form.restup }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="demcarac-restdn-input" class="col-sm-2 col-form-label">Restdn</label>
+                        <div class="col-sm-10">
+                            {{ form.restdn }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row m-t-20">
+                        <div class="col-12 text-right">
+                            <a href="{% url 'dashboard:demcarac_list' %}" class="btn btn-light waves-effect">Cancelar</a>
+                            <button class="btn btn-primary w-md waves-effect waves-light" type="submit"><i class="mdi mdi-content-save"></i> Guardar</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+{% endblock content %}
+
+{% block extrajs %}
+{% endblock extrajs %}

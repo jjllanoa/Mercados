@@ -1,0 +1,71 @@
+{% extends 'dashboard/layouts/app.html' %}
+{% load static %}
+
+{% block titulo %}Demanda{% endblock titulo %}
+
+{% block extracss %}
+{% endblock extracss %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Demanda</h4>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-20">
+            <div class="card-body">
+
+                <form method="POST" class="form-horizontal">
+                    {% csrf_token %}
+
+                    <div class="form-group row">
+                        <label for="demanda-fecha-input" class="col-sm-2 col-form-label">Fecha</label>
+                        <div class="col-sm-10">
+                            {{ form.fecha }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="demanda-dia_mes-input" class="col-sm-2 col-form-label">Día mes</label>
+                        <div class="col-sm-10">
+                            {{ form.dia_mes }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="demanda-demanda_energia-input" class="col-sm-2 col-form-label">Demanda energía</label>
+                        <div class="col-sm-10">
+                            {{ form.demanda_energia }}
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group row">
+                        <label for="demanda-demanda_energia_dia-input" class="col-sm-2 col-form-label">Demanda energía día</label>
+                        <div class="col-sm-10">
+                            {{ form.demanda_energia_dia }}
+                        </div>
+                    </div> -->
+
+                    <div class="form-group row m-t-20">
+                        <div class="col-12 text-right">
+                            <a href="{% url 'dashboard:demanda_list' %}" class="btn btn-light waves-effect">Cancelar</a>
+                            <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Guardar</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+{% endblock content %}
+
+{% block extrajs %}
+{% endblock extrajs %}

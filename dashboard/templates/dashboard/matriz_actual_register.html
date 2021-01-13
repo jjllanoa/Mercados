@@ -1,0 +1,71 @@
+{% extends 'dashboard/layouts/app.html' %}
+{% load static %}
+
+{% block titulo %}Matriz actual (Despachadas Centralmente){% endblock titulo %}
+
+{% block extracss %}
+{% endblock extracss %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Matriz actual (Despachadas Centralmente)</h4>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-20">
+            <div class="card-body">
+
+                <form method="POST" class="form-horizontal">
+                    {% csrf_token %}
+
+                    <div class="form-group row">
+                        <label for="matrizactualdc-tipo-input" class="col-sm-2 col-form-label">Tipo/Fuente de energía</label>
+                        <div class="col-sm-10">
+                            {{ form.tipo }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="matrizactualdc-capacidad-input" class="col-sm-2 col-form-label">Capacidad/Efectiva (MW)</label>
+                        <div class="col-sm-10">
+                            {{ form.capacidad }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="matrizactualdc-conversion-input" class="col-sm-2 col-form-label">Factor de Conversión(MW/m3/s)-Heat Rate(MBTU/MWh)</label>
+                        <div class="col-sm-10">
+                            {{ form.conversion }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="matrizactualdc-fecha-input" class="col-sm-2 col-form-label">Fecha de entrada</label>
+                        <div class="col-sm-10">
+                            {{ form.fecha }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row m-t-20">
+                        <div class="col-12 text-right">
+                            <a href="{% url 'dashboard:matriz_actual_list' %}" class="btn btn-light waves-effect">Cancelar</a>
+                            <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Guardar</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+{% endblock content %}
+
+{% block extrajs %}
+{% endblock extrajs %}

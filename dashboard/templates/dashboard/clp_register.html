@@ -1,0 +1,112 @@
+{% extends 'dashboard/layouts/app.html' %}
+{% load static %}
+
+{% block titulo %}CLP{% endblock titulo %}
+
+{% block extracss %}
+{% endblock extracss %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">CLP</h4>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-20">
+            <div class="card-body">
+
+                <form method="POST" class="form-horizontal">
+                    {% csrf_token %}
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">representante_proyecto</label>
+                        <div class="col-sm-10">
+                            {{ form.representante_proyecto }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">proyecto</label>
+                        <div class="col-sm-10">
+                            {{ form.proyecto }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">clasificacion_planta</label>
+                        <div class="col-sm-10">
+                            {{ form.clasificacion_planta }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">oef_asignada</label>
+                        <div class="col-sm-10">
+                            {{ form.oef_asignada }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">inicio_vigencia</label>
+                        <div class="col-sm-10">
+                            {{ form.inicio_vigencia }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">fin_vigencia</label>
+                        <div class="col-sm-10">
+                            {{ form.fin_vigencia }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">tecnologia</label>
+                        <div class="col-sm-10">
+                            {{ form.tecnologia }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">capacidad</label>
+                        <div class="col-sm-10">
+                            {{ form.capacidad }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">fecha_entrada</label>
+                        <div class="col-sm-10">
+                            {{ form.fecha_entrada }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">file</label>
+                        <div class="col-sm-10">
+                            {{ form.file }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row m-t-20">
+                        <div class="col-12 text-right">
+                            <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Guardar</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+{% endblock content %}
+
+{% block extrajs %}
+{% endblock extrajs %}

@@ -1,0 +1,148 @@
+<!-- Left Sidebar Start -->
+<div class="left side-menu">
+    <div class="slimscroll-menu" id="remove-scroll">
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="metismenu" id="side-menu">
+                <li class="menu-title">Main</li>
+                <li>
+                    <a href="{% url 'dashboard:index' %}" class="waves-effect">
+                        <i class="mdi mdi-view-dashboard"></i><span class="badge badge-primary badge-pill float-right">2</span> <span> Dashboard </span>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="calendar.html" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Calendar </span></a>
+                </li> -->
+
+                <!-- <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-email-outline"></i><span> Email <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <ul class="submenu">
+                        <li><a href="email-inbox.html">Inbox</a></li>
+                        <li><a href="email-read.html">Email Read</a></li>
+                        <li><a href="email-compose.html">Email Compose</a></li>
+                    </ul>
+                </li> -->
+
+                <li class="menu-title">Components</li>
+
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted-type"></i><span> Plan expansión <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'dashboard:plan_energia_firme_demanda_list' %}">Energía firme y demanda</a></li>
+                        <li><a href="{% url 'dashboard:plan_corto_plazo_list' %}">Corto plazo</a></li>
+                        <li><a href="{% url 'dashboard:plan_meta_matriz_ernc_list' %}">Meta matriz ERNC</a></li>
+                        <li><a href="{% url 'dashboard:plan_capacidad_adicional_max_ernc_list' %}">Cap. adicional máx ERNC</a></li>
+                        <li><a href="{% url 'dashboard:plan_meta_matriz_list' %}">Meta matriz</a></li>
+                        <li><a href="{% url 'dashboard:plan_capacidad_adicional_max_list' %}">Cap. adicional máx</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-buffer"></i> <span> Variables azules <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'dashboard:demcarac_list' %}">DemCarac</a></li>
+                        <li><a href="{% url 'dashboard:meta_matriz_list' %}">Meta matriz</a></li>
+                        <li><a href="{% url 'dashboard:capmax_list' %}">CapMax</a></li>
+                        <li><a href="{% url 'dashboard:dentradatec_list' %}">DEntradaTec</a></li>
+                        <li><a href="{% url 'dashboard:demenficc_fil_list' %}">DemENFICC Fil</a></li>
+                        <li><a href="{% url 'dashboard:lcoe_list' %}">LCOE</a></li>
+                        <!-- <li><a href="ui-grid.html">Grid</a></li> -->
+                        <!-- <li><a href="ui-images.html">Images</a></li> -->
+                        <!-- <li><a href="ui-lightbox.html">Lightbox</a></li> -->
+                        <!-- <li><a href="ui-modals.html">Modals</a></li> -->
+                        <!-- <li><a href="ui-pagination.html">Pagination</a></li> -->
+                        <!-- <li><a href="ui-popover-tooltips.html">Popover & Tooltips</a></li> -->
+                        <!-- <li><a href="ui-rangeslider.html">Range Slider</a></li> -->
+                        <!-- <li><a href="ui-session-timeout.html">Session Timeout</a></li> -->
+                        <!-- <li><a href="ui-progressbars.html">Progress Bars</a></li> -->
+                        <!-- <li><a href="ui-sweet-alert.html">Sweet-Alert</a></li> -->
+                        <!-- <li><a href="ui-tabs-accordions.html">Tabs & Accordions</a></li> -->
+                        <!-- <li><a href="ui-typography.html">Typography</a></li> -->
+                        <!-- <li><a href="ui-video.html">Video</a></li> -->
+
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i><span> Variables moradas <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'dashboard:matriz_actual_list' %}">Matriz actual</a></li>
+                        <li><a href="{% url 'dashboard:demanda_list' %}">Demanda</a></li>
+                        <li><a href="{% url 'dashboard:planta_list' %}">Plantas existentes</a></li>
+                        <li><a href="{% url 'dashboard:cxc_list' %}">CxC</a></li>
+                        <li><a href="{% url 'dashboard:clp_list' %}">CLP</a></li>
+                        <!-- <li><a href=""></a>asd</li> -->
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-chart-line"></i><span> Variables verdes <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'dashboard:consolidado_existente_list' %}">Consolidado existente</a></li>
+                        <li><a href="{% url 'dashboard:crecimiento_mw_list' %}">Crecimiento MW</a></li>
+                        <li><a href="{% url 'dashboard:existente_cxc_clp_list' %}">Existente CxC CLP</a></li>
+                        <li><a href="{% url 'dashboard:adicional_list' %}">Adicional</a></li>
+                        <!-- <li><a href="charts-c3.html">C3 Chart</a></li> -->
+                        <!-- <li><a href="charts-other.html">Jquery Knob Chart</a></li> -->
+                    </ul>
+                </li>
+
+                <!-- <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-album"></i> <span> Icons  <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span></span> </a>
+                    <ul class="submenu">
+                        <li><a href="icons-material.html">Material Design</a></li>
+                        <li><a href="icons-ion.html">Ion Icons</a></li>
+                        <li><a href="icons-fontawesome.html">Font Awesome</a></li>
+                        <li><a href="icons-themify.html">Themify Icons</a></li>
+                        <li><a href="icons-dripicons.html">Dripicons</a></li>
+                        <li><a href="icons-typicons.html">Typicons Icons</a></li>
+                    </ul>
+                </li> -->
+
+                <!-- <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-google-maps"></i><span> Maps <span class="badge badge-pill badge-danger float-right">2</span> </span></a>
+                    <ul class="submenu">
+                        <li><a href="maps-google.html"> Google Map</a></li>
+                        <li><a href="maps-vector.html"> Vector Map</a></li>
+                    </ul>
+                </li> -->
+
+                <li class="menu-title">Extras</li>
+
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account-location"></i><span> Authentication <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'dashboard:user_list' %}">Usuarios</a></li>
+                        <!-- <li><a href="pages-register.html">Register</a></li>
+                        <li><a href="pages-recoverpw.html">Recover Password</a></li>
+                        <li><a href="pages-lock-screen.html">Lock Screen</a></li> -->
+                    </ul>
+                </li>
+
+                <!-- <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-google-pages"></i><span> Extra Pages <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <ul class="submenu">
+                        <li><a href="pages-timeline.html">Timeline</a></li>
+                        <li><a href="pages-invoice.html">Invoice</a></li>
+                        <li><a href="pages-directory.html">Directory</a></li>
+                        <li><a href="pages-blank.html">Blank Page</a></li>
+                        <li><a href="pages-404.html">Error 404</a></li>
+                        <li><a href="pages-500.html">Error 500</a></li>
+                    </ul>
+                </li> -->
+
+            </ul>
+
+        </div>
+        <!-- Sidebar -->
+        <div class="clearfix"></div>
+
+    </div>
+    <!-- Sidebar -left -->
+
+</div>
+<!-- Left Sidebar End -->

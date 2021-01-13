@@ -1,0 +1,61 @@
+{% extends 'dashboard/layouts/auth.html' %}
+{% load static %}
+
+{% block titulo %}Iniciar sesión{% endblock titulo %}
+
+{% block extracss %}
+{% endblock extracss %}
+
+{% block content %}
+<!-- Begin page -->
+<div class="wrapper-page">
+
+    <div class="card">
+        <div class="card-body">
+
+            <h3 class="text-center m-0">
+                <a href="index.html" class="logo logo-admin"><img src="assets/images/logo.png" height="30" alt="logo"></a>
+            </h3>
+
+            <div class="p-3">
+                <h4 class="text-muted font-18 m-b-5 text-center">¡Bienvenido de nuevo!</h4>
+                <p class="text-muted text-center">Inicie sesión para continuar</p>
+
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                <form method="POST" class="form-horizontal m-t-30" action="{% url 'dashboard:login' %}">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label for="username">Usuario</label>
+                        <input type="text" class="form-control" id="username" placeholder="Nombre de usuario" name="username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userpassword">Contraseña</label>
+                        <input type="password" class="form-control" id="userpassword" placeholder="Contraseña" name="password">
+                    </div>
+
+                    <div class="form-group row m-t-20">
+                        <div class="col-6">
+                            <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Iniciar sesión</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
+
+{% block extrajs %}
+{% endblock extrajs %}

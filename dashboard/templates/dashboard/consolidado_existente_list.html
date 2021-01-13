@@ -1,0 +1,102 @@
+{% extends 'dashboard/layouts/app.html' %}
+{% load static %}
+
+{% block titulo %}Consolidado existente{% endblock titulo %}
+
+{% block extracss %}
+<!-- DataTables -->
+<link href="{% static 'plugins/datatables/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'plugins/datatables/buttons.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+
+<!-- Responsive datatable examples -->
+<link href="{% static 'plugins/datatables/responsive.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+{% endblock extracss %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Consolidado existente</h4>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-20">
+            <div class="card-body">
+
+                <p><a href="{% url 'dashboard:consolidado_existente_register' %}" class="btn btn-light waves-effect">Agregar</a></p>
+
+                <div class="table-rep-plugin">
+                    <div class="table-responsive b-0" data-pattern="priority-columns">
+                        <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th>fuente_energia</th>
+                                    <th>planta</th>
+                                    <th>capacidad</th>
+                                    <th>enficc</th>
+                                    <th>tipo</th>
+                                    <th>asignacion</th>
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for dato in datos %}
+                                <tr>
+                                    <th>{{ dato.fuente_energia }}</th>
+                                    <th>{{ dato.planta }}</th>
+                                    <th>{{ dato.capacidad }}</th>
+                                    <th>{{ dato.enficc }}</th>
+                                    <th>{{ dato.tipo }}</th>
+                                    <th>{{ dato.asignacion }}</th>
+                                    <th>
+                                        <a href="{% url 'dashboard:consolidado_existente_edit' dato.id %}" class="btn btn-warning waves-effect waves-light">Editar</a>
+                                        <!-- <a href="{% url 'dashboard:demcarac_delete' dato.id %}" class="btn btn-danger waves-effect waves-light">Eliminar</a> -->
+                                    </th>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+{% endblock content %}
+
+{% block extrajs %}
+<!-- jQuery  -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<!-- <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script> -->
+<script src="{% static 'js/metisMenu.min.js' %}"></script>
+<script src="{% static 'js/jquery.slimscroll.js' %}"></script>
+<script src="{% static 'js/waves.min.js' %}"></script>
+
+<script src="{% static 'plugins/jquery-sparkline/jquery.sparkline.min.js' %}"></script>
+
+<!-- Required datatable js -->
+<script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'plugins/datatables/dataTables.bootstrap4.min.js' %}"></script>
+
+<!-- Buttons examples -->
+<script src="{% static 'plugins/datatables/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'plugins/datatables/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static 'plugins/datatables/jszip.min.js' %}"></script>
+<script src="{% static 'plugins/datatables/pdfmake.min.js' %}"></script>
+<script src="{% static 'plugins/datatables/vfs_fonts.js' %}"></script>
+<script src="{% static 'plugins/datatables/buttons.html5.min.js' %}"></script>
+<script src="{% static 'plugins/datatables/buttons.print.min.js' %}"></script>
+<script src="{% static 'plugins/datatables/buttons.colVis.min.js' %}"></script>
+
+<!-- Responsive examples -->
+<script src="{% static 'plugins/datatables/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'plugins/datatables/responsive.bootstrap4.min.js' %}"></script>
+
+<!-- Datatable init js -->
+<script src="{% static 'pages/datatables.init.js' %}"></script>
+{% endblock extrajs %}
